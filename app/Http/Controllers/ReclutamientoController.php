@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Reclutamiento;
 use Illuminate\Support\Facades\Redirect;
 use App\JefeDepartamento;
+use Illuminate\Support\Facades\DB;
 
 class ReclutamientoController extends Controller
 {
@@ -17,7 +18,7 @@ class ReclutamientoController extends Controller
 
     	$reclutamiento=Reclutamiento::orderBy('Id','ASC')->paginate(10);
         $recursos=$this->recurso();
-    $this->historial('Reclutamiento',1);
+        $this->historial('Reclutamiento',1);
      
        return view ('recursos.reclutamiento.index')->with('reclutamiento',$reclutamiento)
        ->with('recursos',$recursos);
@@ -26,7 +27,6 @@ class ReclutamientoController extends Controller
 
     public function create(){
         $recursos=$this->recurso();
-    
     	return view ('recursos.reclutamiento.create')
          ->with('jefedepartamento',JefeDepartamento::orderBy('Codigo','DESC')->get())
          ->with('recursos',$recursos);

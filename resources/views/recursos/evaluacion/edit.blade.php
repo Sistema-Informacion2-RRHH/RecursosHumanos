@@ -39,13 +39,12 @@ EVALUACION
             
             <div class="form-group">
                 <label form="Descripcion">DESCRIPCION</label>
-                <input type="date" name="HoraFin" class="form-control" value="{{$evaluacion->Descripcion}}">
+                <input type="text" name="Descripcion" class="form-control" value="{{$evaluacion->Descripcion}}">
             </div>
 
             <div class="form-group">
                 <label form="TipoEvaluacion">TIPO EVALUACION</label>
-                <input type="text" name="TipoEvaluacion" class="form-control" value="{{$evaluacion->TipoEvaluacion}}"
-                    placeholder="continuo">
+                <input type="text" name="TipoEvaluacion" class="form-control" value="{{$evaluacion->TipoEvaluacion}}">
             </div>
 
             <div class="form-group">

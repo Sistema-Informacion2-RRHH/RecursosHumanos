@@ -16,10 +16,13 @@ class PostReclutController extends Controller
 
     public function index(){
         $recursos=$this->recurso();
-    //$this->historial('Postulante_Reclutado',1);
+    $this->historial('PostReclut',1);
 
     	$PostReclut=PostReclut::orderBy('Id','ASC')->paginate(10);
-     
+       
+        //$postreclut=DB::table('postreclut')->orderBy('Id','asc')->get ();
+        //dd($postreclut);
+
        return view ('recursos.postreclut.index')
        ->with('recursos',$recursos)
        ->with('postreclut',$PostReclut);
@@ -38,7 +41,7 @@ class PostReclutController extends Controller
     }
 
     public function store(Request $request){
-        $this->historial('Postulante_Reclutado',2);
+        $this->historial('PostReclut',2);
 
     	$PostReclut=new PostReclut;
 
@@ -70,7 +73,7 @@ class PostReclutController extends Controller
     }
 
     public function update(Request $request,$Id ){
-        $this->historial('Postulante_Reclutado',3);
+        $this->historial('PostReclut',3);
 
     	$PostReclut=PostReclut::findOrFail($Id);
 
@@ -86,7 +89,7 @@ class PostReclutController extends Controller
     }
 
     public function destroy($Id){
-        $this->historial('Postulante_Reclutado',4);
+        $this->historial('PostReclut',4);
 
         $PostReclut=PostReclut::findOrFail($Id);
     	$PostReclut->delete();

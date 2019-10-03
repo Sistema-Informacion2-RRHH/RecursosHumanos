@@ -10,88 +10,97 @@ use App\PostReclut;
 
 class SeleccionController extends Controller
 {
-    public function __construct(){
-      $this->mIddleware('auth');
+    public function __construct()
+    {
+        $this->mIddleware('auth');
     }
 
-    public function index(){
-        $recursos=$this->recurso();
-    $this->historial('Seleccion',1);
+    public function index()
+    {
+        $recursos = $this->recurso();
+        $this->historial('Seleccion', 1);
 
-    	$seleccion=Seleccion::orderBy('Id','ASC')->paginate(10);
-     
-       return view ('recursos.seleccion.index')
-       ->with('recursos',$recursos)
-       ->with('seleccion',$seleccion);
+        $seleccion = Seleccion::orderBy('Id', 'ASC')->paginate(10);
 
-    } 
-
-    public function create(){
-        $recursos=$this->recurso();
-    
-    	return view ('recursos.seleccion.create')
-        ->with('recursos',$recursos)
-         ->with('postreclut',PostReclut::orderBy('Id','DESC')->get());
+        return view('recursos.seleccion.index')
+            ->with('recursos', $recursos)
+            ->with('seleccion', $seleccion);
     }
 
-    public function store(Request $request){ 
-    	$seleccion=new Seleccion;
-        $seleccion->Recomendacion=$request->get('Recomendacion');
-        $seleccion->Puntuacion=$request->get('Puntuacion');
+    public function create()
+    {
+        $recursos = $this->recurso();
 
-        $id=$request->get('id');
-        $reg=PostReclut::findOrFail($id);
+        return view('recursos.seleccion.create')
+            ->with('recursos', $recursos)
+            ->with('postreclut', PostReclut::orderBy('Id', 'DESC')->get());
+    }
 
-        $seleccion->IdReclutamiento=$reg->IdReclutamiento;
-        $seleccion->IdPostulante=$reg->IdPostulante;      
-    	$seleccion->save();
-    	$this->historial('Seleccion',2);
-    	
-    	return Redirect::to('seleccion');
+    public function store(Request $request)
+    {
+
+        $this->historial('Seleccion', 2);
+        $seleccion = new Seleccion;
+        $seleccion->Recomendacion = $request->get('Recomendacion');
+        $seleccion->Puntuacion = $request->get('Puntuacion');
+
+        $id = $request->get('id');
+        $reg = PostReclut::findOrFail($id);
+
+        $seleccion->IdReclutamiento = $reg->IdReclutamiento;
+        $seleccion->IdPostulante = $reg->IdPostulante;
+        $seleccion->save();
+        $this->historial('Seleccion', 2);
+
+        return Redirect::to('seleccion');
     }
-    
-    
-    public function show($Id){
-    	
-        return view('recursos.seleccion.show')->with('seleccion',Seleccion::findOrFail($Id));
+
+
+    public function show($Id)
+    {
+
+        return view('recursos.seleccion.show')->with('seleccion', Seleccion::findOrFail($Id));
     }
-    
-    public function edit($Id){
-        $recursos=$this->recurso();
-    
-    	
+
+    public function edit($Id)
+    {
+        $recursos = $this->recurso();
+
+
         return view('recursos.seleccion.edit')
-        ->with('recursos',$recursos)
-        ->with('seleccion',Seleccion::findOrFail($Id))
-        ->with('postreclut',PostReclut::orderBy('Id','DESC')->get());
+            ->with('recursos', $recursos)
+            ->with('seleccion', Seleccion::findOrFail($Id))
+            ->with('postreclut', PostReclut::orderBy('Id', 'DESC')->get());
     }
 
-    public function update(Request $request,$Id ){
+    public function update(Request $request, $Id)
+    {
 
-    	$seleccion=Seleccion::findOrFail($Id);
-
-    	$seleccion->Recomendacion=$request->get('Recomendacion');
-        $seleccion->Puntuacion=$request->get('Puntuacion');
-
-        $id=$request->get('id');
-        $reg=PostReclut::findOrFail($id);
-
-        $seleccion->IdReclutamiento=$reg->IdReclutamiento;
-        $seleccion->IdPostulante=$reg->IdPostulante; 
-    	$seleccion->update();
         $this->historial('Seleccion',3);
-   	
-    	return Redirect::to('seleccion');
+        $seleccion = Seleccion::findOrFail($Id);
 
+        $seleccion->Recomendacion = $request->get('Recomendacion');
+        $seleccion->Puntuacion = $request->get('Puntuacion');
+
+        $id = $request->get('id');
+        $reg = PostReclut::findOrFail($id);
+
+        $seleccion->IdReclutamiento = $reg->IdReclutamiento;
+        $seleccion->IdPostulante = $reg->IdPostulante;
+        $seleccion->update();
+        $this->historial('Seleccion', 3);
+
+        return Redirect::to('seleccion');
     }
 
-    public function destroy($Id){
+    public function destroy($Id)
+    {
 
-        $seleccion=Seleccion::findOrFail($Id);
-    	$seleccion->delete();
         $this->historial('Seleccion',4);
-    	
-    	return Redirect::to('seleccion');
-    }
+        $seleccion = Seleccion::findOrFail($Id);
+        $seleccion->delete();
+        $this->historial('Seleccion', 4);
 
+        return Redirect::to('seleccion');
+    }
 }

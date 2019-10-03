@@ -11,12 +11,12 @@ use App\Seleccion;
 class EntrevistaController extends Controller
 {
     public function __construct(){
-      $this->mIddleware('auth');
+      $this->middleware('auth');
     }
 
     public function index(){
         $recursos=$this->recurso();
-    //$this->historial('Entrevista',1);
+    $this->historial('Entrevista',1);
 
     	$entrevista=Entrevista::orderBy('Id','ASC')->paginate(10);
      
@@ -82,7 +82,7 @@ class EntrevistaController extends Controller
         $entrevista->CodigoJefeDpto=$request->get('CodigoJefeDpto');
         $entrevista->IdSeleccion=$request->get('IdSeleccion');
         $entrevista->update();
-        //$this->historial('Entrevista',3);
+        $this->historial('Entrevista',3);
     	
     	return Redirect::to('entrevista');
 
@@ -92,7 +92,7 @@ class EntrevistaController extends Controller
 
         $entrevista=Entrevista::findOrFail($Id);
     	$entrevista->delete();
-        //$this->historial('Entrevista',4);
+        $this->historial('Entrevista',4);
     	
     	return Redirect::to('entrevista');
     } 

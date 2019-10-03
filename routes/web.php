@@ -41,6 +41,7 @@ Route::resource('jefedepartamento','JefeDepartamentoController');
 Route::resource('postreclut','PostReclutController');
 Route::resource('periodoprueba','PeriodoPruebaController');
 Route::resource('evaluacion','EvaluacionController');
+Route::resource('planillaevaluacion','PlanillaEvaluacionController');
 
 Route::get('/backup', 'BackupController@index');
 Route::get('/exportar', 'BackupController@exportar');

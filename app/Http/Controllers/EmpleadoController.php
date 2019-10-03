@@ -17,6 +17,7 @@ class EmpleadoController extends Controller
 
     public function index(){
         $recursos=$this->recurso();
+        $this->historial('Empleado',1);
 
     	$empleado=Empleado::orderBy('id','ASC')->paginate(10);
        
@@ -34,6 +35,7 @@ class EmpleadoController extends Controller
     }
 
     public function store(EmpleadoFormRequest $request){
+        $this->historial('Empleado',2);
     	$empleado=new Empleado;
         $empleado->id=$request->get('id');
     	$empleado->CI=$request->get('CI');
@@ -67,6 +69,7 @@ class EmpleadoController extends Controller
     }
 
     public function update(EmpleadoFormRequest $request,$id ){
+        $this->historial('c',3);
 
     	$empleado=Empleado::findOrFail($id);
     	$empleado->CI=$request->get('CI');
@@ -86,6 +89,7 @@ class EmpleadoController extends Controller
     }
 
     public function destroy($id){
+        $this->historial('Empleado',4);
 
         $empleado=Empleado::findOrFail($id);
     	$empleado->delete();

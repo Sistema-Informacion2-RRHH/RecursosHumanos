@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Evaluacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class EvaluacionController extends Controller
 {
@@ -17,6 +18,7 @@ class EvaluacionController extends Controller
         $recursos = $this->recurso();
         $evaluacion = Evaluacion::orderBy('Codigo', 'ASC')->paginate(10);
 
+        //$this->historial('Evaluacion',1);
         return view('recursos.evaluacion.index')
             ->with('recursos', $recursos)
             ->with('evaluacion', $evaluacion);
@@ -31,8 +33,8 @@ class EvaluacionController extends Controller
 
     public function store(Request $request)
     {
+        //$this->historial('Evaluacion',2);
         $evaluacion = new Evaluacion;
-        $evaluacion->Codigo = $request->get('Codigo');
         $evaluacion->FechaInicio = $request->get('FechaInicio');
         $evaluacion->FechaFin = $request->get('FechaFin');
         $evaluacion->HoraInicio = $request->get('HoraInicio');
@@ -62,11 +64,12 @@ class EvaluacionController extends Controller
     public function update(Request $request, $Codigo)
     {
 
+        //$this->historial('Evaluacion',3);
         $evaluacion = Evaluacion::findOrFail($Codigo);
         $evaluacion->FechaInicio = $request->get('FechaInicio');
         $evaluacion->FechaFin = $request->get('FechaFin');
-        $evaluacion->HoraInicio = $request->get('FechaInicio');
-        $evaluacion->HoraFin = $request->get('FechaFin');
+        $evaluacion->HoraInicio = $request->get('HoraInicio');
+        $evaluacion->HoraFin = $request->get('HoraFin');
         $evaluacion->Descripcion = $request->get('Descripcion');
         $evaluacion->TipoEvaluacion = $request->get('TipoEvaluacion');
         $evaluacion->update();
@@ -76,6 +79,7 @@ class EvaluacionController extends Controller
 
     public function destroy($Codigo)
     {
+        //$this->historial('Evaluacion',4);
 
         $evaluacion = Evaluacion::findOrFail($Codigo);
         $evaluacion->delete();
