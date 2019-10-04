@@ -1,4 +1,3 @@
-
 @section('titulo')
 R.R.H.H
 @endsection
@@ -9,14 +8,14 @@ R.R.H.H
 
 <div class="container">
 
-<div align="center">
-	
-<h1>RECURSOS HUMANOS </h1>
+  <div align="center" class="container-fluid">
 
-<!--<img src="{{asset('img/recurso.jpg')}}" width="50%" height="40%">	-->
+    <h1>RECURSOS HUMANOS </h1>
+
+    <!--<img src="{{asset('img/recurso.jpg')}}" width="50%" height="40%">	-->
 
 
-<!-- Carousel
+    <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -31,27 +30,27 @@ R.R.H.H
       </ol>
       <div class="carousel-inner" role="listbox">
 
-       
+
         <div class="item active">
-          <img class="first-slide" src="{{asset('img/recurso.png')}}" alt="First slide" width="70%" height="60%">
+          <img class="first-slide" src="{{asset('img/recurso.png')}}" alt="First slide">
         </div>
         <div class="item">
-          <img class="third-slide" src="{{asset('img/recurso02.png')}}" alt="Third slide" width="70%" height="60%">
+          <img class="third-slide" src="{{asset('img/recurso02.png')}}" alt="Third slide">
         </div>
         <div class="item">
-          <img class="third-slide" src="{{asset('img/recurso3.png')}}" alt="Third slide" width="70%" height="60%">
+          <img class="third-slide" src="{{asset('img/recurso3.png')}}" alt="Third slide">
         </div>
         <div class="item">
-          <img class="third-slide" src="{{asset('img/recurso4.png')}}" alt="Third slide" width="70%" height="60%">
+          <img class="third-slide" src="{{asset('img/recurso4.png')}}" alt="Third slide">
         </div>
         <div class="item">
-          <img class="third-slide" src="{{asset('img/recurso5.png')}}" alt="Third slide" width="70%" height="60%">
+          <img class="third-slide" src="{{asset('img/recurso5.png')}}" alt="Third slide">
         </div>
         <div class="item">
-          <img class="third-slide" src="{{asset('img/recurso6.png')}}" alt="Third slide" width="70%" height="60%">
+          <img class="third-slide" src="{{asset('img/recurso6.png')}}" alt="Third slide">
         </div>
         <div class="item">
-          <img class="third-slide" src="{{asset('img/recurso7.png')}}" alt="Third slide" width="70%" height="60%">
+          <img class="third-slide" src="{{asset('img/recurso7.png')}}" alt="Third slide">
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -66,10 +65,10 @@ R.R.H.H
 
 
 
-</div>
+  </div>
 
 
 </div>
 
-        
+
 @endsection
