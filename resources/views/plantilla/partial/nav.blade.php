@@ -102,6 +102,10 @@
                     <li><a href="{{URL('/cargo')}}">Gestionar Cargo</a></li>
                     @endif
 
+                    <li><a href="{{URL('/capacitacion')}}">Gestionar Capacitacion</a></li>
+                    
+                    <li><a href="{{URL('/contrato')}}">Gestionar Contrato</a></li>
+
                     <li><a href="{{URL('/departamento')}}">Gestionar Departamento</a></li>
 
                     <li><a href="{{URL('/informacionprivada')}}">Gestionar Informacion Privada</a></li>

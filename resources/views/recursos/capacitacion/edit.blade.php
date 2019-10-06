@@ -34,6 +34,23 @@
         <input name="FechaFin" type="date" required="required" class="form-control" value="{{$capacitacion->FechaFin}}">
       
         </div>
+           <div class="form-group">
+        <label form="IdEmpleado">Empleado</label>
+        <select type="text" name="IdEmpleado" class="browser-default custom-select custom-select-lg mb-3">
+
+       @foreach($empleados as $e)
+
+          <option value="{{$e->Id}}">{{$e->Nombre}}</option> 
+
+       @endforeach
+        </select>   
+        </div>
+         <div class="form-group">
+
+        <label form="TipoCapacitacion">Tipo Capacitacion</label>
+        <input type="text" name="TipoCapacitacion" class="form-control">
+      
+        </div>
 
         <div class="form-group">
 

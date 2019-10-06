@@ -32,8 +32,8 @@
         <div class="form-group">
 
         <label form="FechaInicio">FECHA INICIO</label>
-        <input type="text" name="FechaInicio" class="form-control" placeholder="continuo">
-        <input type="date" name="date" id="date" pattern="">
+       <!-- <input type="text" name="FechaInicio" class="form-control" placeholder="continuo">
+        --><input type="date" name="FechaInicio" id="date" pattern="">
       
         </div>
 
@@ -41,9 +41,28 @@
         <div class="form-group">
 
         <label form="FechaFin">FECHA FIN</label>
-        <input type="text" name="FechaFin" class="form-control" placeholder="continuo">
+       
+         <input type="date" name="FechaFin" id="date" pattern="">
+        </div>
+         <div class="form-group">
+        <label form="IdEmpleado">Empleado</label>
+        <select type="text" name="IdEmpleado" class="browser-default custom-select custom-select-lg mb-3">
+
+       @foreach($empleados as $e)
+
+          <option value="{{$e->Id}}">{{$e->Nombre}}</option> 
+
+       @endforeach
+        </select>   
+        </div>
+         <div class="form-group">
+
+        <label form="TipoCapacitacion">Tipo Capacitacion</label>
+        <input type="text" name="TipoCapacitacion" class="form-control">
       
         </div>
+
+       
 
         <div class="form-group">
 
@@ -51,6 +70,7 @@
         <button class="btn btn-danger" type="reset">CANCELAR</button>
       
         </div>
+
 
         {!!Form::close()!!}
         </div>

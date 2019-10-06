@@ -1,65 +1,75 @@
-
 @extends('plantilla.main')
 
 @section('titulo')
- CONTRATOS
+CONTRATOS
 @endsection
 
 @section('contenido')
 
- <div class="container-fluid">
+<div class="container">
 
-    
+    <div class="row">
+        <div class="col-md-8">
 
-        <div class="col-md-8 col-md-offset-2">
+            <h3> LISTADO DE CONTRATOS </h3>
 
-           <h3> LISTADO DE CONTRATOS </h3>            
-             
         </div>
 
-    
+    </div>
 
-  
 
-        <div class="col-md-8 col-md-offset-2">
-        	
-        	<div class="table-responsive">
-        		<table class="table table-striped table-bordered table=condensed table-hover">
-        			<thead>
-        				<th>CODIGO</th>
-        				<th>FECHA INICIO</th>
-                        <th>FECHA FIN</th>
-                        <th>DESCRIPCION</th>
-                        <th>IDENTREVISTA</th>
-                        <th>IDPRUEBA</th>
-                        <th>CODIGOEVALUACION</th>
-        				<th>ACCION.. <a href="contrato/create"> <button class="btn btn-success"> NUEVO</button></a></th>
-        			</thead>
+    <div class="row">
+        <div class="col-md-12 col-md-offset-0.5" align="center">
+            <div align="left">
+                <a href="contrato/create"> <button class="btn btn-success"> NUEVO</button></a>
+            </div>
 
-        			@foreach($contrato as $t)
-        			<tr>
-        			 <td>{{$t->Codigo}}</td>	
-        			 <td>{{$t->FechaInicio}}</td>
-                     <td>{{$t->FechaFin}}</td>
-                     <td>{{$t->Descripcion}}</td>
-                     <td>{{$t->IdEntrevista}}</td>	
-                     <td>{{$t->IdPrueba}}</td>
-                    <td>{{$t->CodigoEvaluacion}}</td> 
-                             			 <td>
-        			<a href="{{URL::action('ContratoController@edit',$t->Codigo)}}"><button class="btn btn-info">EDITAR</button></a>	
-        			<a href="" data-target="#modal-delete-{{$t->Codigo}}" data-toggle="modal"><button class="btn btn-danger">ELIMINAR</button></a>	
-        			 </td>	
-        			</tr>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table=condensed table-hover">
+                    <thead>
+                        <th>CODIGO</th>
+                        <th>INICIO</th>
+                        <th>FIN</th>
+                        <th>TIPO</th>
+                        <th>SALARIO</th>
+                        <th>PAGO</th>
+                        <th>PERIODO</th>
+                        <th>LUGAR DE TRABAJO</th>
+                        <th>ENTREVISTA</th>
+                        <th>PRUEBA</th>
+                        <th>CODIGO EVALUACION</th>
+                        <th>ACCION</th>
+                    </thead>
+
+                    @foreach($contrato as $t)
+                    <tr>
+                        <td>{{$t->Codigo}}</td>
+                        <td>{{$t->FechaInicio}}</td>
+                        <td>{{$t->FechaFin}}</td>
+                        <td>{{$t->tipo}}</td>
+                        <td>{{$t->salario}}</td>
+                        <td>{{$t->formadepago}}</td>
+                        <td>{{$t->periodopago}}</td>
+                        <td>{{$t->lugardetrabajo}}</td>
+                        <td>{{$t->IdEntrevista}}</td>
+                        <td>{{$t->IdPrueba}}</td>
+                        <td>{{$t->CodigoEvaluacion}}</td>
+                        <td>
+                            <a href="{{URL::action('ContratoController@edit',$t->Codigo)}}"><button
+                                    class="btn btn-info">EDITAR</button></a>
+                            <a href="" data-target="#modal-delete-{{$t->Codigo}}" data-toggle="modal"><button
+                                    class="btn btn-danger">ELIMINAR</button></a>
+                        </td>
+                    </tr>
                     @include('recursos.contrato.modal')
-        			@endforeach  
+                    @endforeach
 
-        		</table>
-        	</div>
-        	{!!$contrato->render()!!}
-       </div>
+                </table>
+            </div>
+            {!!$contrato->render()!!}
+        </div>
 
 
- </div>
-
+    </div>
+</div>
 @endsection
-

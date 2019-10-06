@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contrato;
 use Illuminate\Support\Facades\Redirect;
-use App\Beneficio;
-use App\Empleado;
+use App\PlanillaEvaluacion;
 
 class ContratoController extends Controller
 {
@@ -25,10 +24,12 @@ class ContratoController extends Controller
 
     public function create(){
          $recursos=$this->recurso();
+        $planillaevaluacion= PlanillaEvaluacion::orderBy('CodigoEvaluacion')->get();
+       
     	return view ('recursos.contrato.create')
          ->with('recursos',$recursos)
-        ->with('beneficio',Beneficio::orderBy('Descripcion','DESC')->get())
-        ->with('empleado',Empleado::orderBy('Nombre','DESC')->get());
+         ->with('planillaevaluacion',$planillaevaluacion);
+      
     }
 
     public function store(Request $request){
@@ -36,9 +37,18 @@ class ContratoController extends Controller
     	$contrato->Codigo=$request->get('Codigo');
     	$contrato->FechaInicio=$request->get('FechaInicio');
         $contrato->FechaFin=$request->get('FechaFin');
-        $contrato->Tipo=$request->get('Tipo');
-        $contrato->idBeneficio=$request->get('idBeneficio');
-        $contrato->idEmpleado=$request->get('idEmpleado');
+
+        $contrato->tipo=$request->get('tipo');
+        $contrato->salario=$request->get('salario');
+        $contrato->formadepago=$request->get('formapago');
+        $contrato->periodopago=$request->get('periodopago') ;
+        $contrato->lugardetrabajo=$request->get('lugartrabajo');
+        $contrato->IdEntrevista=$request->get('IdEntrevista');
+         $contrato->IdPrueba=$request->get('IdPrueba');
+          $contrato->CodigoEvaluacion=$request->get('CodigoEvaluacion');   
+       // $contrato->Tipo=$request->get('Tipo');
+       // $contrato->idBeneficio=$request->get('idBeneficio');
+        //$contrato->idEmpleado=$request->get('idEmpleado');
     	$contrato->save();
     	
     	return Redirect::to('contrato');
@@ -54,9 +64,9 @@ class ContratoController extends Controller
     	$recursos=$this->recurso();
         return view('recursos.contrato.edit') 
         ->with('recursos',$recursos)
-        ->with('contrato',Contrato::findOrFail($Codigo))
-        ->with('beneficio',Beneficio::orderBy('Descripcion','DESC')->get())
-        ->with('empleado',Empleado::orderBy('Nombre','DESC')->get());
+        ->with('contrato',Contrato::findOrFail($Codigo));
+      //  ->with('beneficio',Beneficio::orderBy('Descripcion','DESC')->get())
+        //->with('empleado',Empleado::orderBy('Nombre','DESC')->get());
     }
 
     public function update(Request $request,$Codigo ){
@@ -64,9 +74,14 @@ class ContratoController extends Controller
     	$contrato=Contrato::findOrFail($Codigo);
     	$contrato->FechaInicio=$request->get('FechaInicio');
         $contrato->FechaFin=$request->get('FechaFin');
-        $contrato->Tipo=$request->get('Tipo');
-        $contrato->idBeneficio=$request->get('idBeneficio');
-        $contrato->idEmpleado=$request->get('idEmpleado');
+         $contrato->tipo=$request->get('tipo');
+        $contrato->salario=$request->get('salario');
+        $contrato->formadepago=$request->get('formapago');
+        $contrato->periodopago=$request->get('periodopago') ;
+        $contrato->lugardetrabajo=$request->get('lugartrabajo');
+        $contrato->IdEntrevista=$request->get('IdEntrevista');
+         $contrato->IdPrueba=$request->get('IdPrueba');
+          $contrato->CodigoEvaluacion=$request->get('CodigoEvaluacion');   
     	$contrato->update();
     	
     	return Redirect::to('contrato');

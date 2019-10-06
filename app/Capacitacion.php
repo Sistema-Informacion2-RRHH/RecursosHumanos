@@ -12,5 +12,5 @@ class Capacitacion extends Model
 	
 	public $timestamps=false;
 	
-	protected $fillable=['Codigo','Descripcion','FechaInicio','FechaFin'];
+	protected $fillable=['Codigo','FechaInicio','FechaFin','Descripcion','IdEmpleado','TipoCapacitacion'];
 }

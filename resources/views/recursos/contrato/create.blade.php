@@ -15,6 +15,7 @@
         {!!Form::open( array('url'=>'contrato','method'=>'POST','autocomplete'=>'off') )!!}
         {!!Form::token()!!}
 
+
         <div class="form-group">
 
         <label form="Codigo">CODIGO</label>
@@ -29,52 +30,79 @@
 
         <div class="form-group">
         <label form="FechaFin">FECHA FIN</label>
-        <input type="date" name="FechaFin" class="form-control" placeholder="continuo">
+        <input type="date" name="FechaFin" class="form-control" >
         </div>
 
-        <div class="form-group">
-        <label form="Tipo">DESCRIPCION</label>
-        <input type="text" name="Tipo" class="form-control" placeholder="coloque aqui la descripcion">
+ <div class="form-group">
+        <label form="FechaFin">Tipo de Contrato</label>
+        <input type="text" name="tipo" class="form-control">
         </div>
+ 
+
+ <div class="form-group">
+        <label form="salario">SALARIO</label>
+        <input type="text" name="salario" class="form-control">
+        </div>
+ <div class="form-group">
+        <label form="FechaFin">Forma de Pago</label>
+        <input type="text" name="formapago" class="form-control">
+        </div>
+  <div class="form-group">
+        <label form="FechaFin">Periodo de Pago</label>
+        <input type="text" name="periodopago" class="form-control">
+        </div>
+
+       
+
+
+ <div class="form-group">
+        <label form="lugartrabajo">Lugar de Trabajo</label>
+        <input type="text" name="lugartrabajo" class="form-control">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="form-group">
         <label form="Tipo">IDENTREVISTA</label>
-        <input type="text" name="Tipo" class="form-control" placeholder="00">
+        <input type="text" name="IdEntrevista" class="form-control" placeholder="00">
         </div>
 <div class="form-group">
         <label form="Tipo">IDPRUEBA</label>
-        <input type="text" name="Tipo" class="form-control" placeholder="00">
+        <input type="text" name="IdPrueba" class="form-control" placeholder="00">
         </div>
+         <div class="form-group">
+    
 <div class="form-group">
         <label form="Tipo">CODIGO EVALUACION</label>
-        <input type="text" name="Tipo" class="form-control" placeholder="00">
+        <input type="text" name="CodigoEvaluacion" class="form-control" placeholder="00">
         </div>
 
 
+<!--<div class="form-group">
+        <label form="Curriculum">DOCUMENTO CONTRATO</label>
+        <input type="file" name="Curriculum" class="form-control" required>
+        </div> -->
 
-     <!--   <div class="form-group">
-        <label form="idBeneficio">BENEFICIO</label>
-        <select name="idBeneficio" class="browser-default custom-select custom-select-lg mb-3">
 
-       @foreach($beneficio as $c)
 
-          <option value="{{$c->id}}">{{$c->Descripcion}}</option> 
-
-       @endforeach
-        </select>   
-        </div>
-
-        <div class="form-group">
-        <label form="idEmpleado">EMPLEADO</label>
-        <select name="idEmpleado" class="browser-default custom-select custom-select-lg mb-3">
-
-       @foreach($empleado as $c)
-
-          <option value="{{$c->id}}">{{$c->Nombre}}</option> 
-
-       @endforeach
-        </select>   
-        </div>
--->
 
         <div class="form-group">
 

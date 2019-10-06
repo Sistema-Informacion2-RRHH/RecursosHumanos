@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Capacitacion;
 use Illuminate\Support\Facades\Redirect;
+use App\Empleado;
 
 class CapacitacionController extends Controller
 {
@@ -15,25 +16,32 @@ class CapacitacionController extends Controller
     }
 
     public function index(){
+        $recursos=$this->recurso();
 
     	$capacitacion=Capacitacion::orderBy('Codigo','ASC')->paginate(10);
      
-       return view ('recursos.capacitacion.index')->with('capacitacion',$capacitacion);
+       return view ('recursos.capacitacion.index')->with('recursos',$recursos)->with('capacitacion',$capacitacion);
 
     } 
 
     public function create(){
-    	return view ('recursos.capacitacion.create');
+        $recursos=$this->recurso();
+    	return view ('recursos.capacitacion.create')->with('recursos',$recursos)-> with('empleados',Empleado::orderBy('id','Nombre','Desc')->get());
     }
 
     public function store(Request $request){
     	$capacitacion=new Capacitacion;
     	$capacitacion->Codigo=$request->get('Codigo');
-    	$capacitacion->Descripcion=$request->get('Descripcion');
+    
     	$capacitacion->FechaInicio=$request->get('FechaInicio');
     	$capacitacion->FechaFin=$request->get('FechaFin');
-    	$capacitacion->save();
-    	
+    	   $capacitacion->Descripcion=$request->get('Descripcion');
+
+           $capacitacion->IdEmpleado=$request->get('IdEmpleado');
+           $capacitacion->TipoCapacitacion=$request->get('TipoCapacitacion');
+        $capacitacion->save();
+
+    	//return DD();
     	return Redirect::to('capacitacion');
     }
     
@@ -44,9 +52,12 @@ class CapacitacionController extends Controller
     }
     
     public function edit($Codigo){
+        $recursos=$this->recurso();
     	
         return view('recursos.capacitacion.edit')
-        ->with('capacitacion',Capacitacion::findOrFail($Codigo));
+        ->with('recursos',$recursos)
+        ->with('capacitacion',Capacitacion::findOrFail($Codigo))
+        ->with('empleados',Empleado::orderBy('id','Nombre','Desc')->get());
     }
 
     public function update(Request $request,$Codigo ){
@@ -56,6 +67,9 @@ class CapacitacionController extends Controller
     	$capacitacion->Descripcion=$request->get('Descripcion');
     	$capacitacion->FechaInicio=$request->get('FechaInicio');
     	$capacitacion->FechaFin=$request->get('FechaFin');
+
+           $capacitacion->IdEmpleado=$request->get('IdEmpleado');
+           $capacitacion->TipoCapacitacion=$request->get('TipoCapacitacion');
     	$capacitacion->update();
     	
     	return Redirect::to('capacitacion');
