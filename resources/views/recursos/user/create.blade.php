@@ -1,57 +1,66 @@
 @extends('plantilla.main')
 @section('titulo')
- USUARIOS
+USUARIOS
 @endsection
 
 @section('contenido')
+@if(count($errors)>0)
+<div class="alert alert-danger" role="alert">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <div class="container">
     <div class="row">
 
         <div class="col-md-8 col-md-offset-2">
 
-           <h3> NUEVO USUARIO </h3>            
-             
-        
-        {!!Form::open( array('url'=>'user','method'=>'POST','autocomplete'=>'off') )!!}
-        {!!Form::token()!!}
+            <h3> NUEVO USUARIO </h3>
 
 
-        <div class="form-group">
-        <label form="name">NOMBRE</label>
-        <input type="text" name="name" class="form-control" placeholder="juaquin" required>
-        </div>
-
-         <div class="form-group">
-        <label form="email">EMAIL</label>
-        <input type="email" name="email" class="form-control" placeholder="ejemplo@gmail.com" required>
-        </div>
-
-         <div class="form-group">
-        <label form="password">PASSWORD</label>
-        <input type="password" name="password" class="form-control" placeholder="********" required>
-        </div>
-
-        <div class="form-group">
-        <label form="idrol">ROL</label>
-        <select name="idrol" class="browser-default custom-select custom-select-lg mb-3">
-
-       @foreach($rol as $c)
-
-          <option value="{{$c->id}}">{{$c->nombre}}</option> 
-
-       @endforeach
-        </select>   
-        </div>
+            {!!Form::open( array('url'=>'user','method'=>'POST','autocomplete'=>'off') )!!}
+            {!!Form::token()!!}
 
 
-        <div class="form-group">
+            <div class="form-group">
+                <label form="name">NOMBRE</label>
+                <input type="text" name="name" class="form-control" placeholder="juaquin" required>
+            </div>
 
-        <button class="btn btn-primary" type="submit">GUARDAR</button>
-        <button class="btn btn-danger" type="reset">CANCELAR</button>
-      
-        </div>
+            <div class="form-group">
+                <label form="email">EMAIL</label>
+                <input type="email" name="email" class="form-control" placeholder="ejemplo@gmail.com" required>
+            </div>
 
-        {!!Form::close()!!}
+            <div class="form-group">
+                <label form="password">PASSWORD</label>
+                <input type="password" name="password" class="form-control" placeholder="********" required>
+            </div>
+
+            <div class="form-group">
+                <label form="idrol">ROL</label>
+                <select name="idrol" class="browser-default custom-select custom-select-lg mb-3">
+
+                    @foreach($rol as $c)
+
+                    <option value="{{$c->id}}">{{$c->nombre}}</option>
+
+                    @endforeach
+                </select>
+            </div>
+
+
+            <div class="form-group">
+
+                <button class="btn btn-primary" type="submit">GUARDAR</button>
+                <button class="btn btn-danger" type="reset">CANCELAR</button>
+
+            </div>
+
+            {!!Form::close()!!}
         </div>
 
     </div>
