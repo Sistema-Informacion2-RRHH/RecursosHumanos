@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contrato;
+use App\Entrevista;
 use App\Evaluacion;
 use App\PeriodoPrueba;
 
@@ -34,6 +35,7 @@ class PlanillaEvaluacionController extends Controller
         $recursos=$this->recurso();
         return view ('recursos.planillaevaluacion.create')
         ->with('recursos',$recursos)
+        ->with('entrevista',Entrevista::orderBy('Id','DESC')->get())
         ->with('evaluacion',Evaluacion::orderBy('Codigo','DESC')->get())
         ->with('contrato',Contrato::orderBy('Codigo','DESC')->get())
         ->with('periodoprueba',PeriodoPrueba::orderBy('IdPrueba','DESC')->get());

@@ -18,11 +18,11 @@ class EntrevistaController extends Controller
         $recursos=$this->recurso();
     $this->historial('Entrevista',1);
 
-    	$entrevista=Entrevista::orderBy('Id','ASC')->paginate(10);
+    	$Entrevista=Entrevista::orderBy('Id','ASC')->paginate(10);
      
        return view ('recursos.entrevista.index')
        ->with('recursos',$recursos)
-       ->with('entrevista',$entrevista);
+       ->with('entrevista',$Entrevista);
 
     } 
 
@@ -31,7 +31,7 @@ class EntrevistaController extends Controller
     
     	return view ('recursos.entrevista.create')
         ->with('recursos',$recursos)
-         ->with('jefedepartamento',JefeDepartamento::orderBy('Codigo','DESC')->get())
+         ->with('jefedpto',JefeDepartamento::orderBy('Codigo','DESC')->get())
          ->with('seleccion',Seleccion::orderBy('Id','DESC')->get());
     }
 
@@ -65,7 +65,7 @@ class EntrevistaController extends Controller
         return view('recursos.entrevista.edit')
         ->with('recursos',$recursos)
         ->with('entrevista',Entrevista::findOrFail($Id))
-         ->with('jefedepartamento',JefeDepartamento::orderBy('Codigo','DESC')->get())
+         ->with('jefedpto',JefeDepartamento::orderBy('Codigo','DESC')->get())
          ->with('seleccion',Seleccion::orderBy('Id','DESC')->get());
     }
 

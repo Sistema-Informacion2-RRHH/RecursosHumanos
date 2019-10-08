@@ -24,17 +24,17 @@ class EmpleadoFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'=>'required',
+            'Id',//=>'required',
             'CI'=>'required',
 			'Nombre'=>'required',
             'Direccion'=>'required',
-            'Email'=>'required',
+            'Correo'=>'required',
             'Sexo'=>'required',
-            'Telefono_tra'=>'required',
-            'movil_tra'=>'required',
             'Profesion'=>'required',
             'IdCargo'=>'required',
-            'CodDepartamento'=>'required'
+            'IdInformPrivada'=>'required',
+            'CodigoDpto'=>'required',
+            'CodigoJefeDpto'=>'required'
             
         ];
     }

@@ -28,21 +28,21 @@
 
        <div class="form-group">
         <label form="FechaFin">Tipo de Contrato</label>
-        <input type="text" name="tipo" class="form-control">
+        <input type="text" name="tipo" class="form-control" value=" {{$contrato->tipo}}" >
         </div>
  
 
  <div class="form-group">
         <label form="salario">SALARIO</label>
-        <input type="text" name="salario" class="form-control">
+        <input type="text" name="salario" class="form-control" value=" {{$contrato->salario}}">
         </div>
  <div class="form-group">
-        <label form="FechaFin">Forma de Pago</label>
-        <input type="text" name="formapago" class="form-control">
+        <label form="formadepago">Forma de Pago</label>
+        <input type="text" name="formapago" class="form-control" value=" {{$contrato->formadepago}}">
         </div>
   <div class="form-group">
         <label form="FechaFin">Periodo de Pago</label>
-        <input type="text" name="periodopago" class="form-control">
+        <input type="text" name="periodopago" class="form-control" value=" {{$contrato->periodopago}}">
         </div>
 
        
@@ -50,20 +50,20 @@
 
  <div class="form-group">
         <label form="lugartrabajo">Lugar de Trabajo</label>
-        <input type="text" name="lugartrabajo" class="form-control">
+        <input type="text" name="lugartrabajo" class="form-control" value=" {{$contrato->lugardetrabajo}}">
         </div>
 
 <div class="form-group">
         <label form="Tipo">IDENTREVISTA</label>
-        <input type="text" name="IdEntrevista" class="form-control" placeholder="00">
+        <input type="text" name="IdEntrevista" class="form-control"  value=" {{$contrato->IdEntrevista}}">
         </div>
 <div class="form-group">
         <label form="Tipo">IDPRUEBA</label>
-        <input type="text" name="IdPrueba" class="form-control" placeholder="00">
+        <input type="text" name="IdPrueba" class="form-control"  value=" {{$contrato->IdPrueba}}">
         </div>
 <div class="form-group">
         <label form="Tipo">CODIGO EVALUACION</label>
-        <input type="text" name="CodigoEvaluacion" class="form-control" placeholder="00">
+        <input type="text" name="CodigoEvaluacion" class="form-control"  value=" {{$contrato->CodigoEvaluacion}}">
         </div>
 
         <div class="form-group">

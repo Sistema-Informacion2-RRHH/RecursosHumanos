@@ -35,7 +35,6 @@ class SeguroController extends Controller
 
     public function store(Request $request){
     	$seguro=new Seguro;
-    	$seguro->Codigo=$request->get('Codigo');
         $seguro->NombreAseguradora=$request->get('NombreAseguradora');
         $seguro->Telefono=$request->get('Telefono');
         $seguro->Descripcion=$request->get('Descripcion'); 

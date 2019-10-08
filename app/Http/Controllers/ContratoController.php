@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contrato;
+use App\Entrevista;
 use Illuminate\Support\Facades\Redirect;
 use App\PlanillaEvaluacion;
 
@@ -34,7 +35,6 @@ class ContratoController extends Controller
 
     public function store(Request $request){
     	$contrato=new Contrato;
-    	$contrato->Codigo=$request->get('Codigo');
     	$contrato->FechaInicio=$request->get('FechaInicio');
         $contrato->FechaFin=$request->get('FechaFin');
 

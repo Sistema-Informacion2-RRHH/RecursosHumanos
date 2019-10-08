@@ -12,5 +12,5 @@ class Seguro extends Model
 	
 	public $timestamps=false;
 	
-	protected $fillable=['Codigo','NombreAseguradora','Telefono','Descripcion'];
+	protected $fillable=['NombreAseguradora','Telefono','Descripcion'];
 }

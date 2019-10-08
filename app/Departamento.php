@@ -12,7 +12,7 @@ class Departamento extends Model
 	
 	public $timestamps=false;
 	
-	protected $fillable=['Codigo','Nombre','NroEmpleado'];
+	protected $fillable=['Nombre','NroEmpleado'];
 	
 	public function jefes(){//un usuario tiene un
     return $this->hasOne('App\JefeDepartamento','CodigoDpto','Codigo');

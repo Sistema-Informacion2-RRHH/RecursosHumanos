@@ -34,7 +34,6 @@ class DepartamentoController extends Controller
 
     public function store(Request $request){
     	$departamento=new Departamento;
-    	$departamento->Codigo=$request->get('Codigo');
     	$departamento->Nombre=$request->get('Nombre');
         $departamento->NroEmpleado=$request->get('NroEmpleado');
     	$departamento->save();

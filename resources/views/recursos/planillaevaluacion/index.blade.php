@@ -8,7 +8,7 @@ PLANILLA EVALUACION
 
 <div class="container">
     <div class="row">
-        <div align="center">
+        <div class="col-md-8 col-md-offset-2" align="center">
             <h3> LISTADO DE PLANILLA EVALUACION </h3>
         </div>
     </div>

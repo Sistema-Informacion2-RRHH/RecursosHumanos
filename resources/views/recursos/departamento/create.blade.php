@@ -26,13 +26,6 @@
         {!!Form::token()!!}
 
         <div class="form-group">
-
-        <label form="Codigo">CODIGO</label>
-        <input type="number" name="Codigo" class="form-control" value="0" placeholder="0" required>
-      
-        </div>
-
-        <div class="form-group">
         <label form="Nombre">NOMBRE</label>
         <input type="text" name="Nombre" class="form-control" placeholder="contaduria" required>
         </div>

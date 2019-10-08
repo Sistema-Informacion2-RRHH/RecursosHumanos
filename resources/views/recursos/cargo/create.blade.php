@@ -26,7 +26,7 @@
 
         <div class="form-group">
         <label form="Nombre">NOMBRE</label>
-        <input type="text" name="Nombre" class="form-control" placeholder="joaquin">     
+        <input type="text" name="Nombre" class="form-control" placeholder="Direccion General">     
         </div>
 
         <div class="form-group">

@@ -8,17 +8,30 @@ class Empleado extends Model
 {
     protected $table = 'empleado';
     
-	protected $primaryKey='id';
+	protected $primaryKey='Id';
 	
 	public $timestamps=false;
 	
-	protected $fillable=['id','CI','Nombre','Direccion','Email','Sexo','Telefono_tra','movil_tra','Profesion','IdCargo','CodDepartamento'];
+	protected $fillable=['CI','Nombre','Direccion','Correo','Sexo','Profesion','IdCargo','IdInformPrivada','CodigoDpto','CodigoJefeDpto','CodigoContrato'];
 
-	public function Cargos(){
-
-	return $this->hasMany('App\Cargo');
-
+	public function cargo(){
+		return $this->belongsTo('App\Cargo','IdCargo','Id');
 	}
 
+	public function informacionprivada(){
+		return $this->belongsTo('App\InformacionPrivada','IdInformPrivada','Id');
+	}
+
+	public function departamento(){
+		return $this->belongsTo('App\Departamento','CodigoDpto','Codigo');
+	   }
+
+	public function jefedepartamento(){
+		return $this->belongsTo('App\JefeDepartamento','CodigoJefeDpto','Id');
+	}
+
+	public function contrato(){
+		return $this->belongsTo('App\Contrato','CodigoContrato','Codigo');
+	}
 	
 }

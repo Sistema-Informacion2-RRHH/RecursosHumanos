@@ -16,7 +16,7 @@ class PostReclutController extends Controller
 
     public function index(){
         $recursos=$this->recurso();
-    $this->historial('PostReclut',1);
+    //$this->historial('PostReclut',1);
 
     	$PostReclut=PostReclut::orderBy('Id','ASC')->paginate(10);
        

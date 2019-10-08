@@ -40,7 +40,6 @@ class JefeDepartamentoController extends Controller
         //  $this->historial('Jefe_Departamento',2);
 
         $jefedepartamento = new JefeDepartamento;
-        $jefedepartamento->Codigo = $request->get('Codigo');
         $jefedepartamento->CorreoElectronico = $request->get('CorreoElectronico');
         $jefedepartamento->Descripcion = $request->get('Descripcion');
         $jefedepartamento->CodigoDpto = $request->get('CodigoDpto');

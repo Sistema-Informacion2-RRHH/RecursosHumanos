@@ -16,11 +16,6 @@
         {!!Form::token()!!}
 
         <div class="form-group">
-        <label form="Codigo">CODIGO</label>
-        <input type="number" name="Codigo" class="form-control" value="0" placeholder="0">   
-        </div>
-
-        <div class="form-group">
         <label form="NombreAseguradora">NOMBRE DE LA ASEGURADORA</label>
         <input type="text" name="NombreAseguradora" class="form-control"  placeholder="buen samaritanno">   
         </div>

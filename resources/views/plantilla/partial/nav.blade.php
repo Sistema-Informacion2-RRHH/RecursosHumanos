@@ -143,15 +143,9 @@
 
 
             @endif
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
 
             <li>
-                <a href="https://twitter.com/maridlcrmn">Follow me</a>
+                <a href="https://www.facebook.com/rrhhsi2/?modal=admin_todo_tour" target="blank">Facebook</a>
             </li>
         </ul>
     </nav>

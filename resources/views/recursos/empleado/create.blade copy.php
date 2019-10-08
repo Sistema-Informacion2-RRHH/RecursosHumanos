@@ -11,6 +11,15 @@ EMPLEADOS
 
             <h3> NUEVO EMPLEADO </h3>
 
+            @if(count($errors)>0)
+            <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+            </ul>
+            </div>
+            @endif  
             {!!Form::open( array('url'=>'empleado','method'=>'POST','autocomplete'=>'off') )!!}
             {!!Form::token()!!}
 

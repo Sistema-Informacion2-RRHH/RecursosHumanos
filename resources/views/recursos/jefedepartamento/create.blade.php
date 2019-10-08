@@ -26,11 +26,6 @@ JEFE POR DEPARTAMENTO
             {!!Form::token()!!}
 
             <div class="form-group">
-                <label form="Codigo">CODIGO</label>
-                <input type="number" name="Codigo" class="form-control" value="0" placeholder="0">
-            </div>
-
-            <div class="form-group">
                 <label form="CorreoElectronico">E-MAIL</label>
                 <input type="email" name="CorreoElectronico" class="form-control" placeholder="ejemplo@correo.com"
                     required>

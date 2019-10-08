@@ -24,12 +24,6 @@ EVALUACION
             {!!Form::open( array('url'=>'evaluacion','method'=>'POST','autocomplete'=>'off') )!!}
             {!!Form::token()!!}
 
-            <div class="form-group">
-
-                <label form="Codigo">CODIGO</label>
-                <input type="number" name="Codigo" class="form-control" value="0" placeholder="1">
-
-            </div>
 
             <div class="form-group">
                 <label form="FechaInicio">FECHA INICIO</label>
