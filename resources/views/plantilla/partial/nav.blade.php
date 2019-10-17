@@ -1,6 +1,11 @@
-<link href="{{asset('plugin/bootstrap3.3.0/dist/css/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
-<script src="{{asset('plugin/bootstrap3.3.0/dist/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('plugin/jquery-1.11.1.min.js')}}"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
 
 <link rel="stylesheet" type="text/css" href="{{asset('/css/custom.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('plugin/bootstrap3.3.0/dist/css/bootstrap.css')}}">
@@ -17,10 +22,10 @@
             </li>
 
 
+            <li><a href="{{ URL('/login') }}">Iniciar Session</a></li>
             @if (Auth::guest())
-            <li><a href="{{ url('/login') }}">Iniciar Session</a></li>
 
-            <!-- <li><a href="{{ url('/register') }}">Registrar</a></li> -->
+            <!-- <li><a href="{{ URL('/register') }}">Registrar</a></li> -->
 
             @else
             <li class="dropdown">
