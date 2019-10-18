@@ -10,19 +10,13 @@
  <div class="container">
 
     <div class="row">
-
-        <div class="col-md-8 col-md-offset-2">
-
+        <div class="col-md-8 col-md-offset-2" align="center">
            <h3> LISTADO DE DEPARTAMENTOS </h3>            
-             
         </div>
-
     </div>
 
     <div class="row">
-
         <div class="col-md-8 col-md-offset-2">
-        	
         	<div class="table-responsive">
         		<table class="table table-striped table-bordered table=condensed table-hover">
         			<thead>
@@ -52,9 +46,7 @@
         	</div>
         	{!!$departamento->render()!!}
        </div>
-
     </div>
-
  </div>
 
 @endsection

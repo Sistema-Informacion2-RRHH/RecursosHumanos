@@ -1,14 +1,3 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-
-
-<link rel="stylesheet" type="text/css" href="{{asset('/css/custom.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('plugin/bootstrap3.3.0/dist/css/bootstrap.css')}}">
 <div id="wrapper">
     <div class="overlay"></div>
 
@@ -53,8 +42,10 @@
 
             @if (!Auth::guest())
             </li>
+            <!-- Modulo Administracion y Seguridad -->
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administracion<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administracion y Seguridad<span
+                        class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header">Administracion y Seguridad</li>
                     @if($recursos['Usuario'])
@@ -69,7 +60,7 @@
                 </ul>
             </li>
 
-
+            <!--Modulo Reclutamiento-->
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reclutamiento<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
@@ -80,72 +71,117 @@
                     @if($recursos['Postulante'])
                     <li><a href="{{URL('/postulante')}}">Gestionar Postulante</a></li>
                     @endif
+
+                    <li><a href="{{URL('/postreclut')}}">Gestionar Postulante Reclutado</a></li>
+
                     @if($recursos['Seleccion'])
                     <li><a href="{{URL('/seleccion')}}">Gestionar Seleccion</a></li>
                     @endif
                     @if($recursos['Entrevista'])
                     <li><a href="{{URL('/entrevista')}}">Programar Entrevista</a></li>
                     @endif
-                    <li><a href="{{URL('/postreclut')}}">Gestionar Postulante Reclutado</a></li>
-
-                    <li><a href="{{URL('/empleado')}}">Gestionar Empleado</a></li>
 
                     <li><a href="{{URL('/periodoprueba')}}">Gestionar PeriodoPrueba</a></li>
 
                     <li><a href="{{URL('/evaluacion')}}">Gestionar Evaluacion</a></li>
 
                     <li><a href="{{URL('/planillaevaluacion')}}">Planilla Evaluacion</a></li>
+
                 </ul>
             </li>
 
-
+            <!--Modulo Empleado-->
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empleado<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header">Administracion y Seguridad</li>
+                    <li class="dropdown-header">Administracion</li>
+
+                    <li><a href="{{URL('/empleado')}}">Gestionar Empleado</a></li>
+
                     @if($recursos['Cargo'])
                     <li><a href="{{URL('/cargo')}}">Gestionar Cargo</a></li>
                     @endif
 
-                    <li><a href="{{URL('/capacitacion')}}">Gestionar Capacitacion</a></li>
-                    
-                    <li><a href="{{URL('/contrato')}}">Gestionar Contrato</a></li>
+                    <!-- Gestionar Turno -->
+
+                    <!-- Gestionar HOrarios -->
 
                     <li><a href="{{URL('/departamento')}}">Gestionar Departamento</a></li>
 
+                    <li><a href="{{URL('/capacitacion')}}">Gestionar Capacitacion</a></li>
+
                     <li><a href="{{URL('/informacionprivada')}}">Gestionar Informacion Privada</a></li>
+
+                    <!-- Gestionar Solicitud de auscencia-->
 
                     <li><a href="{{URL('/jefedepartamento')}}">Gestionar Jefe Por Departamento</a></li>
                 </ul>
             </li>
 
-
+            <!-- Modulo Documentos y Permisos -->
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header">Documentos y Permisos</li>
+
+                    <li><a href="{{URL('/contrato')}}">Gestionar Contrato</a></li>
+
+                    <!-- Gestionar Beneficios-->
+
                     @if($recursos['Seguro'])
                     <li><a href="{{URL('/seguro')}}">Gestionar Seguros</a></li>
                     @endif
+
+                    <!-- Gestionar Permiso -->
+
                     @if($recursos['Vacacion'])
                     <li><a href="{{URL('/vacacion')}}">Gestionar Vacaciones</a></li>
                     @endif
+
+                    <!-- Gestionar Asistencia-->
+
+                    <!-- Gestionar Memorandum -->
+
+                    <!-- Gestionar Tipo de Memorandum -->
+
+                    <!-- Gestionar Reporte -->
                 </ul>
             </li>
 
+            <!-- Modulo Sueldos -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sueldos<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">Sueldos y salarios</li>
+
+                    <!-- Gestionar Salarios -->
+
+                    <!-- Gestionar Descuentos -->
+
+                    <!-- Gestionar Planilla de pagos-->
+
+                    <!-- Gestionar Tipo de descuento -->
+
+                </ul>
+            </li>
 
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pagos<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notificacion<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header">Documentos y Permisos</li>
+                    <li class="dropdown-header">Notificaciones</li>
 
-                    <li><a href="#">Empleado</a></li>
+                    <!-- Registrar Usuario -->
 
-                    <li><a href="#">Cargo</a></li>
+                    <!-- Gestionar Notificacion -->
+
+                    <!-- Visualizar Entrevista de trabajo -->
+
+                    <!-- Visualizar historial de planilla -->
+
+                    <!-- Visualizar oferta de trabajo -->
 
                 </ul>
             </li>
-
 
             @endif
 
@@ -163,13 +199,9 @@
             <span class="hamb-middle"></span>
             <span class="hamb-bottom"></span>
         </button>
-        <div class="container">
-            <div class="row">
                 <section>
                     @yield('contenido')
-
                 </section>
-            </div>
         </div>
     </div>
     <!-- /#page-content-wrapper -->

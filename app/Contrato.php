@@ -13,4 +13,9 @@ class Contrato extends Model
 	public $timestamps=false;
 	
 	protected $fillable=['FechaInicio','FechaFin','tipo','salario','formadepago','periodopago','lugardetrabajo','IdEntrevista','IdPrueba','CodigoEvaluacion'];
+
+	public function planillaevaluacion(){
+		return $this->belongsTo(PlanillaEvaluacion::class);
+	}
+
 }

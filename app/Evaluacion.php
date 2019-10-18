@@ -11,7 +11,14 @@ class Evaluacion extends Model
     protected $primaryKey='Codigo';
     
 	protected $fillable=['FechaInicio','FechaFin','HoraInicio','HoraFin','Descripcion','TipoEvaluacion'];
-	
-	public $timestamps=false;
+    
+    
+    public function planillaevaluacion(){
+        return $this->belongsTo(PlanillaEvaluacion::class);
+    }
+
+    public $timestamps=false;
+    
+
 	
 }

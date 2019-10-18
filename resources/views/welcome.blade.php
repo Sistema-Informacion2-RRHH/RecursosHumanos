@@ -1,23 +1,15 @@
 @section('titulo')
 R.R.H.H
 @endsection
-
 @extends('plantilla.main')
-
 @section('contenido')
-
-<div class="container">
-
-  <div align="center" class="container-fluid">
-
-    <h1>RECURSOS HUMANOS </h1>
-
+<div class="container-fluid">
     <!--<img src="{{asset('img/recurso.jpg')}}" width="50%" height="40%">	-->
-
-
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      
+        <h3 align="center"> SISTEMA DE RECURSOS HUMANOS </h3> 
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -62,13 +54,6 @@ R.R.H.H
         <span class="sr-only">Next</span>
       </a>
     </div><!-- /.carousel -->
-
-
-
-  </div>
-
-
 </div>
-
 
 @endsection

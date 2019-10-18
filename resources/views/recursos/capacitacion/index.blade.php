@@ -9,25 +9,15 @@ CAPACITACION
 <div class="container-fluid">
 
 	<div class="row">
-
-		<div class="col-md-8 col-md-offset-2">
-
+		<div class="col-md-8 col-md-offset-2" align="center">
 			<h3> LISTADO DE CAPACITACION </h3>
-
 		</div>
-
 	</div>
 
 	<div class="row">
-
 		<div class="col-md-8 col-md-offset-2">
 
-			<div align="left">
-				<a href="capacitacion/create"> <button class="btn btn-success"> NUEVO</button></a>
-			</div>
 			<div class="table-responsive">
-
-
 				<table class="table table-striped table-bordered table=condensed table-hover">
 					<thead>
 						<th>CODIGO</th>
@@ -59,12 +49,13 @@ CAPACITACION
 					@endforeach
 
 				</table>
+				<div align="left">
+					<a href="capacitacion/create"> <button class="btn btn-success"> NUEVO</button></a>
+				</div>
 			</div>
 			{!!$capacitacion->render()!!}
 		</div>
-
 	</div>
-
 </div>
 
 @endsection

@@ -10,10 +10,8 @@ ENTREVISTA
 
     <div class="row">
 
-        <div class="col-md-8 col-md-offset-2">
-
+        <div class="col-md-8 col-md-offset-2" align="center">
             <h3> LISTADO DE ENTREVISTAS </h3>
-
         </div>
 
     </div>
@@ -62,8 +60,6 @@ ENTREVISTA
         </div>
     </div>
     {!!$entrevista->render()!!}
-
-
 </div>
 
 @endsection
